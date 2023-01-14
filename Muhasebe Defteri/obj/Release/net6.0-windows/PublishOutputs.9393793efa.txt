@@ -1,0 +1,5 @@
+D:\Coding\Muhasebe Defteri\Muhasebe Defteri\Basic-Debt-Tracking-App\The App\Muhasebe Defteri.exe
+D:\Coding\Muhasebe Defteri\Muhasebe Defteri\Basic-Debt-Tracking-App\The App\Muhasebe Defteri.dll
+D:\Coding\Muhasebe Defteri\Muhasebe Defteri\Basic-Debt-Tracking-App\The App\Muhasebe Defteri.deps.json
+D:\Coding\Muhasebe Defteri\Muhasebe Defteri\Basic-Debt-Tracking-App\The App\Muhasebe Defteri.runtimeconfig.json
+D:\Coding\Muhasebe Defteri\Muhasebe Defteri\Basic-Debt-Tracking-App\The App\Muhasebe Defteri.pdb

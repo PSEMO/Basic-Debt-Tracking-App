@@ -25,7 +25,13 @@ namespace Muhasebe_Defteri
             CurrentTxtPath = pathString + "\\Info.txt";
 
             if (!File.Exists(CurrentTxtPath))// if the app is run for the first time
-                File.Create(CurrentTxtPath);
+            {
+                using (var stream = File.Create(CurrentTxtPath))
+                {
+                    Thread.Sleep(100);
+                }
+                Thread.Sleep(100);//These are not required but it feels safer :p
+            }
 
             //Reads the saved file (Info.txt) and writes the info to AllDebtPersons.Items
             string[] lines = File.ReadAllLines(CurrentTxtPath);
@@ -188,9 +194,6 @@ namespace Muhasebe_Defteri
         //Clears the content of the file that is in given path.
         private void ClearFile(string GivenFile)
         {
-            if (!File.Exists(GivenFile))
-                File.Create(GivenFile);
-
             TextWriter tw = new StreamWriter(GivenFile, false);
             tw.Write(string.Empty);
             tw.Close();
@@ -263,6 +266,11 @@ namespace Muhasebe_Defteri
             }
 
             LabelTotalAmmount.Text = TotalDebt + "";
+        }
+
+        private void ListBoxPersons_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

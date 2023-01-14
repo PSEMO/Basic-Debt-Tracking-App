@@ -188,10 +188,10 @@
             this.LabeName.TabIndex = 0;
             this.LabeName.Text = "İsim";
             // 
-            // BtnAssign
+            // BtnAddDebt
             // 
             this.BtnAddDebt.Location = new System.Drawing.Point(30, 200);
-            this.BtnAddDebt.Name = "BtnAssign";
+            this.BtnAddDebt.Name = "BtnAddDebt";
             this.BtnAddDebt.Size = new System.Drawing.Size(115, 23);
             this.BtnAddDebt.TabIndex = 6;
             this.BtnAddDebt.Text = "Borcu işle";
@@ -222,11 +222,11 @@
             this.TotalPanel.Size = new System.Drawing.Size(74, 57);
             this.TotalPanel.TabIndex = 4;
             // 
-            // label1
+            // LabelTotal
             // 
             this.LabelTotal.AutoSize = true;
             this.LabelTotal.Location = new System.Drawing.Point(13, 12);
-            this.LabelTotal.Name = "label1";
+            this.LabelTotal.Name = "LabelTotal";
             this.LabelTotal.Size = new System.Drawing.Size(49, 15);
             this.LabelTotal.TabIndex = 2;
             this.LabelTotal.Text = "Toplam:";
@@ -243,24 +243,25 @@
             this.LabelTotalAmmount.Text = "0";
             this.LabelTotalAmmount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // DeleteSelectedDebt
+            // BtnDeleteSelectedDebt
             // 
             this.BtnDeleteSelectedDebt.Location = new System.Drawing.Point(252, 245);
-            this.BtnDeleteSelectedDebt.Name = "DeleteSelectedDebt";
+            this.BtnDeleteSelectedDebt.Name = "BtnDeleteSelectedDebt";
             this.BtnDeleteSelectedDebt.Size = new System.Drawing.Size(74, 39);
             this.BtnDeleteSelectedDebt.TabIndex = 1;
             this.BtnDeleteSelectedDebt.Text = "Seçili borcu sil";
             this.BtnDeleteSelectedDebt.UseVisualStyleBackColor = true;
             this.BtnDeleteSelectedDebt.Click += new System.EventHandler(this.deleteSelectedDebt);
             // 
-            // listBox1
+            // ListBoxPersons
             // 
             this.ListBoxPersons.FormattingEnabled = true;
             this.ListBoxPersons.ItemHeight = 15;
             this.ListBoxPersons.Location = new System.Drawing.Point(20, 15);
-            this.ListBoxPersons.Name = "listBox1";
+            this.ListBoxPersons.Name = "ListBoxPersons";
             this.ListBoxPersons.Size = new System.Drawing.Size(204, 289);
             this.ListBoxPersons.TabIndex = 0;
+            this.ListBoxPersons.SelectedIndexChanged += new System.EventHandler(this.ListBoxPersons_SelectedIndexChanged);
             // 
             // PanelDetailedDebtLogs
             // 
@@ -273,12 +274,12 @@
             this.PanelDetailedDebtLogs.TabIndex = 4;
             this.PanelDetailedDebtLogs.Visible = false;
             // 
-            // listBox2
+            // ListBoxDetailedPersons
             // 
             this.ListBoxDetailedPersons.FormattingEnabled = true;
             this.ListBoxDetailedPersons.ItemHeight = 15;
             this.ListBoxDetailedPersons.Location = new System.Drawing.Point(20, 15);
-            this.ListBoxDetailedPersons.Name = "listBox2";
+            this.ListBoxDetailedPersons.Name = "ListBoxDetailedPersons";
             this.ListBoxDetailedPersons.Size = new System.Drawing.Size(450, 289);
             this.ListBoxDetailedPersons.TabIndex = 0;
             // 
