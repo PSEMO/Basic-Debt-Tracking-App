@@ -1,0 +1,17 @@
+D:\Coding\Muhasebe Defteri\Muhasebe Defteri\bin\Release\net6.0-windows\Muhasebe Defteri.exe
+D:\Coding\Muhasebe Defteri\Muhasebe Defteri\bin\Release\net6.0-windows\Muhasebe Defteri.deps.json
+D:\Coding\Muhasebe Defteri\Muhasebe Defteri\bin\Release\net6.0-windows\Muhasebe Defteri.runtimeconfig.json
+D:\Coding\Muhasebe Defteri\Muhasebe Defteri\bin\Release\net6.0-windows\Muhasebe Defteri.dll
+D:\Coding\Muhasebe Defteri\Muhasebe Defteri\bin\Release\net6.0-windows\Muhasebe Defteri.pdb
+D:\Coding\Muhasebe Defteri\Muhasebe Defteri\obj\Release\net6.0-windows\Muhasebe Defteri.csproj.AssemblyReference.cache
+D:\Coding\Muhasebe Defteri\Muhasebe Defteri\obj\Release\net6.0-windows\Muhasebe_Defteri.Form1.resources
+D:\Coding\Muhasebe Defteri\Muhasebe Defteri\obj\Release\net6.0-windows\Muhasebe Defteri.csproj.GenerateResource.cache
+D:\Coding\Muhasebe Defteri\Muhasebe Defteri\obj\Release\net6.0-windows\Muhasebe Defteri.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding\Muhasebe Defteri\Muhasebe Defteri\obj\Release\net6.0-windows\Muhasebe Defteri.AssemblyInfoInputs.cache
+D:\Coding\Muhasebe Defteri\Muhasebe Defteri\obj\Release\net6.0-windows\Muhasebe Defteri.AssemblyInfo.cs
+D:\Coding\Muhasebe Defteri\Muhasebe Defteri\obj\Release\net6.0-windows\Muhasebe Defteri.csproj.CoreCompileInputs.cache
+D:\Coding\Muhasebe Defteri\Muhasebe Defteri\obj\Release\net6.0-windows\Muhasebe Defteri.dll
+D:\Coding\Muhasebe Defteri\Muhasebe Defteri\obj\Release\net6.0-windows\refint\Muhasebe Defteri.dll
+D:\Coding\Muhasebe Defteri\Muhasebe Defteri\obj\Release\net6.0-windows\Muhasebe Defteri.pdb
+D:\Coding\Muhasebe Defteri\Muhasebe Defteri\obj\Release\net6.0-windows\Muhasebe Defteri.genruntimeconfig.cache
+D:\Coding\Muhasebe Defteri\Muhasebe Defteri\obj\Release\net6.0-windows\ref\Muhasebe Defteri.dll

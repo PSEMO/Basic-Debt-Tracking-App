@@ -1,0 +1,5 @@
+F:\App\Muhasebe Defteri.exe
+F:\App\Muhasebe Defteri.dll
+F:\App\Muhasebe Defteri.deps.json
+F:\App\Muhasebe Defteri.runtimeconfig.json
+F:\App\Muhasebe Defteri.pdb
