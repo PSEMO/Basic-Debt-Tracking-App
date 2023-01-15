@@ -16,15 +16,7 @@ namespace Muhasebe_Defteri
         {
             Name = name;
             Ammount = ammount;
-
-            if(note == "" || note == " " || note == null || note == String.Empty)
-            {
-                Note = "Notsuz";
-            }
-            else
-            {
-                Note = note;
-            }
+            Note = note;
         }
 
         //It will print in this format when I print a Person object.

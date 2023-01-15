@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.LeftPanel = new System.Windows.Forms.Panel();
-            this.Btn5Left = new System.Windows.Forms.Button();
-            this.Btn4Left = new System.Windows.Forms.Button();
             this.Btn3Left = new System.Windows.Forms.Button();
             this.Btn2Left = new System.Windows.Forms.Button();
             this.Btn1Left = new System.Windows.Forms.Button();
@@ -41,7 +39,7 @@
             this.TxtBoxName = new System.Windows.Forms.TextBox();
             this.LabelDebt = new System.Windows.Forms.Label();
             this.LabeName = new System.Windows.Forms.Label();
-            this.BtnAddDebt = new System.Windows.Forms.Button();
+            this.BtnAssign = new System.Windows.Forms.Button();
             this.PanelDebtLogs = new System.Windows.Forms.Panel();
             this.TotalPanel = new System.Windows.Forms.Panel();
             this.LabelTotal = new System.Windows.Forms.Label();
@@ -62,8 +60,6 @@
             this.LeftPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.LeftPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.LeftPanel.Controls.Add(this.Btn5Left);
-            this.LeftPanel.Controls.Add(this.Btn4Left);
             this.LeftPanel.Controls.Add(this.Btn3Left);
             this.LeftPanel.Controls.Add(this.Btn2Left);
             this.LeftPanel.Controls.Add(this.Btn1Left);
@@ -73,26 +69,6 @@
             this.LeftPanel.Name = "LeftPanel";
             this.LeftPanel.Size = new System.Drawing.Size(200, 441);
             this.LeftPanel.TabIndex = 0;
-            // 
-            // Btn5Left
-            // 
-            this.Btn5Left.Location = new System.Drawing.Point(10, 239);
-            this.Btn5Left.Name = "Btn5Left";
-            this.Btn5Left.Size = new System.Drawing.Size(180, 50);
-            this.Btn5Left.TabIndex = 4;
-            this.Btn5Left.Text = "Kaydet";
-            this.Btn5Left.UseVisualStyleBackColor = true;
-            this.Btn5Left.Click += new System.EventHandler(this.Btn5Left_Click);
-            // 
-            // Btn4Left
-            // 
-            this.Btn4Left.Location = new System.Drawing.Point(10, 183);
-            this.Btn4Left.Name = "Btn4Left";
-            this.Btn4Left.Size = new System.Drawing.Size(180, 50);
-            this.Btn4Left.TabIndex = 3;
-            this.Btn4Left.Text = "button4";
-            this.Btn4Left.UseVisualStyleBackColor = true;
-            this.Btn4Left.Click += new System.EventHandler(this.Btn4Left_Click);
             // 
             // Btn3Left
             // 
@@ -134,7 +110,7 @@
             this.PanelEntry.Controls.Add(this.TxtBoxName);
             this.PanelEntry.Controls.Add(this.LabelDebt);
             this.PanelEntry.Controls.Add(this.LabeName);
-            this.PanelEntry.Controls.Add(this.BtnAddDebt);
+            this.PanelEntry.Controls.Add(this.BtnAssign);
             this.PanelEntry.Location = new System.Drawing.Point(200, 0);
             this.PanelEntry.Name = "PanelEntry";
             this.PanelEntry.Size = new System.Drawing.Size(584, 441);
@@ -146,6 +122,7 @@
             this.TxtBoxNote.Name = "TxtBoxNote";
             this.TxtBoxNote.Size = new System.Drawing.Size(135, 23);
             this.TxtBoxNote.TabIndex = 5;
+            this.TxtBoxNote.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtBoxNote_KeyDown);
             // 
             // LabelNote
             // 
@@ -162,13 +139,17 @@
             this.TxtBoxDebt.Name = "TxtBoxDebt";
             this.TxtBoxDebt.Size = new System.Drawing.Size(135, 23);
             this.TxtBoxDebt.TabIndex = 3;
+            this.TxtBoxDebt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtBoxDebt_KeyDown);
             // 
             // TxtBoxName
             // 
+            this.TxtBoxName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.TxtBoxName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.TxtBoxName.Location = new System.Drawing.Point(20, 42);
             this.TxtBoxName.Name = "TxtBoxName";
             this.TxtBoxName.Size = new System.Drawing.Size(135, 23);
             this.TxtBoxName.TabIndex = 2;
+            this.TxtBoxName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtBoxName_KeyDown);
             // 
             // LabelDebt
             // 
@@ -188,15 +169,15 @@
             this.LabeName.TabIndex = 0;
             this.LabeName.Text = "İsim";
             // 
-            // BtnAddDebt
+            // BtnAssign
             // 
-            this.BtnAddDebt.Location = new System.Drawing.Point(30, 200);
-            this.BtnAddDebt.Name = "BtnAddDebt";
-            this.BtnAddDebt.Size = new System.Drawing.Size(115, 23);
-            this.BtnAddDebt.TabIndex = 6;
-            this.BtnAddDebt.Text = "Borcu işle";
-            this.BtnAddDebt.UseVisualStyleBackColor = true;
-            this.BtnAddDebt.Click += new System.EventHandler(this.BtnAssign_Click);
+            this.BtnAssign.Location = new System.Drawing.Point(30, 200);
+            this.BtnAssign.Name = "BtnAssign";
+            this.BtnAssign.Size = new System.Drawing.Size(115, 23);
+            this.BtnAssign.TabIndex = 6;
+            this.BtnAssign.Text = "Borcu işle";
+            this.BtnAssign.UseVisualStyleBackColor = true;
+            this.BtnAssign.Click += new System.EventHandler(this.BtnAssign_Click);
             // 
             // PanelDebtLogs
             // 
@@ -260,6 +241,7 @@
             this.ListBoxPersons.Location = new System.Drawing.Point(20, 15);
             this.ListBoxPersons.Name = "ListBoxPersons";
             this.ListBoxPersons.Size = new System.Drawing.Size(204, 289);
+            this.ListBoxPersons.Sorted = true;
             this.ListBoxPersons.TabIndex = 0;
             // 
             // PanelDetailedDebtLogs
@@ -276,10 +258,12 @@
             // ListBoxDetailedPersons
             // 
             this.ListBoxDetailedPersons.FormattingEnabled = true;
+            this.ListBoxDetailedPersons.HorizontalScrollbar = true;
             this.ListBoxDetailedPersons.ItemHeight = 15;
             this.ListBoxDetailedPersons.Location = new System.Drawing.Point(20, 15);
             this.ListBoxDetailedPersons.Name = "ListBoxDetailedPersons";
-            this.ListBoxDetailedPersons.Size = new System.Drawing.Size(450, 289);
+            this.ListBoxDetailedPersons.Size = new System.Drawing.Size(400, 289);
+            this.ListBoxDetailedPersons.Sorted = true;
             this.ListBoxDetailedPersons.TabIndex = 0;
             // 
             // Form1
@@ -288,10 +272,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 441);
             this.Controls.Add(this.LeftPanel);
-            this.Controls.Add(this.PanelDebtLogs);
             this.Controls.Add(this.PanelEntry);
             this.Controls.Add(this.PanelDetailedDebtLogs);
-            this.MinimumSize = new System.Drawing.Size(400, 350);
+            this.Controls.Add(this.PanelDebtLogs);
+            this.MinimumSize = new System.Drawing.Size(440, 350);
             this.Name = "Form1";
             this.Text = "Muhasebe Defteri";
             this.SizeChanged += new System.EventHandler(this.Form1_SizeChanged);
@@ -311,10 +295,8 @@
         private Button Btn1Left;
         private Button Btn2Left;
         private Button Btn3Left;
-        private Button Btn4Left;
-        private Button Btn5Left;
         private Button BtnDeleteSelectedDebt;
-        private Button BtnAddDebt;
+        private Button BtnAssign;
         private Label LabeName;
         private Label LabelDebt;
         private Label LabelNote;
