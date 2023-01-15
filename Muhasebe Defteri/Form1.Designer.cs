@@ -261,7 +261,6 @@
             this.ListBoxPersons.Name = "ListBoxPersons";
             this.ListBoxPersons.Size = new System.Drawing.Size(204, 289);
             this.ListBoxPersons.TabIndex = 0;
-            this.ListBoxPersons.SelectedIndexChanged += new System.EventHandler(this.ListBoxPersons_SelectedIndexChanged);
             // 
             // PanelDetailedDebtLogs
             // 

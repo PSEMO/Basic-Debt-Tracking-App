@@ -30,7 +30,7 @@ namespace Muhasebe_Defteri
         //It will print in this format when I print a Person object.
         override public string ToString()
         {
-            return Name + ": " + Ammount + ". ";
+            return Name + TextFormatHolder.NameEnd + Ammount + TextFormatHolder.DebtEnd;
         }
     }
 }

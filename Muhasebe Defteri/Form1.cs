@@ -16,6 +16,9 @@ namespace Muhasebe_Defteri
         readonly string pathString = Directory.GetCurrentDirectory();
         string CurrentTxtPath;
 
+        readonly string NameEnd = TextFormatHolder.NameEnd; //Where Name Info Ends
+        readonly string DebtEnd = TextFormatHolder.DebtEnd; //Where Basic Debt Info Ends
+
         public Form1()
         {
             InitializeComponent();
@@ -35,20 +38,25 @@ namespace Muhasebe_Defteri
 
             //Reads the saved file (Info.txt) and writes the info to AllDebtPersons.Items
             string[] lines = File.ReadAllLines(CurrentTxtPath);
-            foreach (string line in lines)
+            if(lines.Length > 0)
             {
-                AllDebtPersons.Items.Add(new Person(
-                    line.Substring
-                    (
-                        0, (line.IndexOf(": ")
-                    )),
-                    float.Parse(GetSubstringByString(": ", ".", line)),
-                    line.Substring
-                    ((
-                        line.IndexOf(". ")) + (". ".Length),
-                        line.Length - (line.IndexOf(". ")) - (". ".Length
-                    ))
-                    ));
+                if (lines[0] != "" || lines[0] != String.Empty)
+                {
+                    foreach (string line in lines)
+                    {
+                        AllDebtPersons.Items.Add(new Person(
+                            line.Substring
+                            (
+                                0, (line.IndexOf(NameEnd)
+                            )),
+                            float.Parse(GetSubstringByString(NameEnd, DebtEnd, line)),
+                            line.Substring
+                            (
+                                (line.IndexOf(DebtEnd)) + (DebtEnd.Length),
+                                line.Length - ((line.IndexOf(DebtEnd)) + (DebtEnd.Length))
+                            )));
+                    }
+                }
             }
         }
 
@@ -212,7 +220,7 @@ namespace Muhasebe_Defteri
                 MessageBox.Show("İsim nokta (.) veya iki nokta üst üste (:) içeremez.");
                 TxtBoxName.Text = "";
             }
-            if (Double.TryParse(TxtBoxDebt.Text, out double a))
+            if (!Double.TryParse(TxtBoxDebt.Text, out double a))
             {
                 isASuccesfull = false;
                 MessageBox.Show("Borç sayı olmak zorunda.");
@@ -228,9 +236,10 @@ namespace Muhasebe_Defteri
             if (isASuccesfull)
             {
                 NewDebtPersons.Add(new Person
-                   (TxtBoxName.Text,
+                   (TxtBoxName.Text.ToUpper(),
                    float.Parse(TxtBoxDebt.Text),
-                   TxtBoxNote.Text));
+                   "(" + DateTime.Today.Day + "/" + DateTime.Today.Month + "/" + DateTime.Today.Year +
+                   ", "+ TxtBoxDebt.Text + "TL" + ") " + TxtBoxNote.Text));
 
                 TxtBoxName.Text = "";
                 TxtBoxDebt.Text = "";
@@ -268,9 +277,10 @@ namespace Muhasebe_Defteri
             LabelTotalAmmount.Text = TotalDebt + "";
         }
 
-        private void ListBoxPersons_SelectedIndexChanged(object sender, EventArgs e)
+        protected override void OnFormClosed(FormClosedEventArgs e)
         {
-
+            SaveFiles();
+            base.OnFormClosed(e);
         }
     }
 }
