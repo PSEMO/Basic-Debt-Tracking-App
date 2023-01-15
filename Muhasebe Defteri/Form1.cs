@@ -239,8 +239,8 @@ namespace Muhasebe_Defteri
                 NewDebtPersons.Add(new Person
                    (TxtBoxName.Text.ToUpper(),
                    float.Parse(TxtBoxDebt.Text),
-                   "(" + DateTime.Today.Day + "/" + DateTime.Today.Month + "/" + DateTime.Today.Year +
-                   ", " + TxtBoxDebt.Text + "TL" + ") " + TxtBoxNote.Text));
+                   "(" + DateTime.Today.ToShortDateString() + ", " +
+                   TxtBoxDebt.Text + "TL" + ") " + TxtBoxNote.Text));
 
                 TxtBoxName.Text = "";
                 TxtBoxDebt.Text = "";
