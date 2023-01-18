@@ -10,5 +10,6 @@ namespace Muhasebe_Defteri
     {
         public static readonly string NameEnd = ": ";
         public static readonly string DebtEnd = "TL; ";
+        public static readonly string SecondFase = "NEXT:";
     }
 }
